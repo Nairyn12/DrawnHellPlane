@@ -2726,10 +2726,10 @@ MonoBehaviour:
   - {fileID: 1145075560}
   - {fileID: 1750573739}
   - {fileID: 820548772}
-  _shootingMode: 1
+  _shootingMode: 5
   _shootDelay: 2
   _isShoot: 0
-  _shootSpeed: 50
+  _shootSpeed: 10
 --- !u!1 &1055700548
 GameObject:
   m_ObjectHideFlags: 0

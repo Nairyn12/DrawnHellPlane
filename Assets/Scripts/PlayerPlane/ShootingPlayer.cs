@@ -29,14 +29,24 @@ public class ShootingPlayer : MonoBehaviour
     {
         for(int i = 0; i < mode; i++)
         {
-            _bullets[i].SetActive(true);
-            _bullets[i].transform.position = _guns[i].transform.position;
-            _bullets[i].GetComponent<Rigidbody2D>().AddForce(_bullets[i].transform.up * _shootSpeed, ForceMode2D.Force);            
+            if (_bullets[i] != null)
+            {
+                _bullets[i].SetActive(true);
+                _bullets[i].transform.position = _guns[i].transform.position;
+                _bullets[i].GetComponent<Rigidbody2D>().AddForce(_bullets[i].transform.up * _shootSpeed, ForceMode2D.Impulse);
+                Debug.Log("—“–≈Àﬂ≈Ã: " + _bullets[i].name);
+            }
+            else
+            {
+                mode++;
+            }
         }
 
         for (int i = 0; i < mode; i++)
         {
-            _bullets.RemoveAt(0);
+            Debug.Log("”¡–¿ÕŒ: " + _bullets[0].name);
+            _bullets.Remove(_bullets[0]);
+            //Debug.Log("”¡–¿ÕŒ–≈∆»Ã: " + mode);                   
         }
 
         _isShoot = true;
@@ -46,10 +56,24 @@ public class ShootingPlayer : MonoBehaviour
 
     public void ReturnBullet(GameObject bullet)
     {
-        bullet.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        bullet.transform.position = transform.position;
-        _bullets.Add(bullet);
-        bullet.SetActive(false);
+        bool overlap = false;
+
+        for(int i = 0; i < _bullets.Count; i++)
+        {
+            if (_bullets[i].name == bullet.name)
+            {
+                overlap = true;
+            }
+        }
+
+        if (!overlap)
+        {
+            bullet.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            bullet.transform.position = transform.position;
+            _bullets.Add(bullet);
+            Debug.Log("ƒÓ·‡‚ÎÂÌÓ: " + bullet.name);
+            bullet.SetActive(false);
+        }
     }
 
     IEnumerator ShootDelay()
