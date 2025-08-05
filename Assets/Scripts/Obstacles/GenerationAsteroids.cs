@@ -33,10 +33,23 @@ public class GenerationAsteroids : MonoBehaviour
 
     public void ReturnOnList(GameObject ast)
     {
-        ast.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        ast.transform.position = transform.position;
-        _asteroids.Add(ast);
-        ast.SetActive(false);
+        bool overlap = false;
+
+        for (int i = 0; i < _asteroids.Count; i++)
+        {
+            if (_asteroids[i].name == ast.name)
+            {
+                overlap = true;
+            }
+        }
+
+        if (!overlap)
+        {
+            ast.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            ast.transform.position = transform.position;
+            _asteroids.Add(ast);
+            ast.SetActive(false);
+        }
     }
 
     IEnumerator GeneratorStart()

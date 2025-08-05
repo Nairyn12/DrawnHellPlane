@@ -33,8 +33,7 @@ public class ShootingPlayer : MonoBehaviour
             {
                 _bullets[i].SetActive(true);
                 _bullets[i].transform.position = _guns[i].transform.position;
-                _bullets[i].GetComponent<Rigidbody2D>().AddForce(_bullets[i].transform.up * _shootSpeed, ForceMode2D.Impulse);
-                Debug.Log("—“–≈Àﬂ≈Ã: " + _bullets[i].name);
+                _bullets[i].GetComponent<Rigidbody2D>().AddForce(_bullets[i].transform.up * _shootSpeed, ForceMode2D.Impulse);               
             }
             else
             {
@@ -43,10 +42,8 @@ public class ShootingPlayer : MonoBehaviour
         }
 
         for (int i = 0; i < mode; i++)
-        {
-            Debug.Log("”¡–¿ÕŒ: " + _bullets[0].name);
-            _bullets.Remove(_bullets[0]);
-            //Debug.Log("”¡–¿ÕŒ–≈∆»Ã: " + mode);                   
+        {            
+            _bullets.Remove(_bullets[0]);            
         }
 
         _isShoot = true;
@@ -70,8 +67,7 @@ public class ShootingPlayer : MonoBehaviour
         {
             bullet.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             bullet.transform.position = transform.position;
-            _bullets.Add(bullet);
-            Debug.Log("ƒÓ·‡‚ÎÂÌÓ: " + bullet.name);
+            _bullets.Add(bullet);            
             bullet.SetActive(false);
         }
     }
