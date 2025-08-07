@@ -9,7 +9,11 @@ public class Health : MonoBehaviour
     [SerializeField] private float _healthCurrent;
     [SerializeField] private float _healthMax;
     [SerializeField] private int scale;
+    [SerializeField] private float _delayBlockDamage;
+    [SerializeField] private bool _isHealthChange;
 
+    public UnityEvent _damageReaction;
+    public UnityEvent _OnChangeHealth;
     public UnityEvent _death;
 
     private Explose _explose;
@@ -19,19 +23,25 @@ public class Health : MonoBehaviour
 
     private void Start()
     {
+        _isHealthChange = false;
         _explose = FindAnyObjectByType<Explose>();
+        _OnChangeHealth?.Invoke();
     }
 
     public void Damage(float damage)
     {
-        if (damage < _healthCurrent)
+        if (damage < _healthCurrent && !_isHealthChange)
+        {
             _healthCurrent -= damage;
-        else
+            _damageReaction?.Invoke();            
+        }
+        else if (damage >= _healthCurrent && !_isHealthChange)
         {
             _healthCurrent = 0.0f;
             _explose.SetExplosion(scale, transform.position);
             _death?.Invoke();
         }
+        _OnChangeHealth?.Invoke();
     }
 
     public void Healing(float heal)
@@ -41,5 +51,23 @@ public class Health : MonoBehaviour
         else
             _healthCurrent = _healthMax;
 
+        _OnChangeHealth?.Invoke();
+    }
+
+    public void BlockUnBlockDamage(bool flag)
+    {
+        _isHealthChange = flag;
+    }
+
+    public void BlockDamageAndDelay()
+    {
+        _isHealthChange = true;
+        StartCoroutine(DelayBlockDamage());
+    }
+
+    IEnumerator DelayBlockDamage()
+    {
+        yield return new WaitForSeconds(_delayBlockDamage);
+        BlockUnBlockDamage(false);
     }
 }
