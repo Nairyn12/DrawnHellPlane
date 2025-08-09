@@ -45,10 +45,14 @@ public class GenerationAsteroids : MonoBehaviour
 
         if (!overlap)
         {
-            ast.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            Debug.Log(ast.name + " возврат в пул");
             ast.transform.position = transform.position;
+            Health health = ast.GetComponent<Health>(); 
+            health.Healing(health.HealthMax);
+            health.IsPlayerDestroy = false;
+            ast.GetComponent<Rigidbody2D>().velocity = Vector2.zero;           
             _asteroids.Add(ast);
-            ast.SetActive(false);
+            ast.SetActive(false);            
         }
     }
 

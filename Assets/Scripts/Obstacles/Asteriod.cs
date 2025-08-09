@@ -6,10 +6,10 @@ using UnityEngine.Events;
 
 public class Asteriod : MonoBehaviour
 {
-    [SerializeField] private float _damage;
+    [SerializeField] private float _damage;    
 
     public UnityEvent _return;
-
+    
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Destroy"))
@@ -19,11 +19,14 @@ public class Asteriod : MonoBehaviour
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Столкновение! " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Player"))
+    {        
+        if (collision.gameObject.GetComponent<Health>())
         {
-            Debug.Log("Урон! " + collision.gameObject.name);
+            if (!collision.gameObject.CompareTag("BulletPlayer"))
+            {
+                collision.gameObject.GetComponent<Health>().IsPlayerDestroy = false;
+            }
+
             collision.gameObject.GetComponent<Health>().Damage(_damage);
         }
     }

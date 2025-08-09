@@ -11,6 +11,7 @@ public class Explose : MonoBehaviour
     {
         GameObject explosion = Instantiate(_explosion, pos, Quaternion.identity);
         explosion.transform.localScale *= scale;
+        Debug.Log(explosion.gameObject.name + " " + explosion.gameObject.transform.position);
         StartCoroutine(ExploseDuration(explosion));
     }
 

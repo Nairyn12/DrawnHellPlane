@@ -8,7 +8,7 @@ public class PlayerHealthUI : MonoBehaviour
     [SerializeField] private ViewModelPlayer _view;
     [SerializeField] private TMP_Text _HealthText;
 
-    private void Start()
+    private void Awake()
     {
         _view.onChangedHealth += RewriteHealth;
     }
