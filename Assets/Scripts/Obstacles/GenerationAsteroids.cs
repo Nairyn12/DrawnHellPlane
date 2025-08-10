@@ -68,7 +68,7 @@ public class GenerationAsteroids : MonoBehaviour
 
    IEnumerator GeneratorTemp()
     {
-        float r = Random.Range(0.5f, 2.0f);
+        float r = Random.Range(0.5f, 1.5f);
 
         yield return new WaitForSeconds(speedGeneration + r);
 
