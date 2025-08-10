@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShootingPlayer : MonoBehaviour
 {
+    [SerializeField] private InputActionReference _shootActionRef;
     [SerializeField] private List<Transform> _guns;
     [SerializeField] private List<GameObject> _bullets;
     [SerializeField] private int _shootingMode;
     [SerializeField] private float _shootDelay;
-    [SerializeField] private bool _isShoot;
+    [SerializeField] private bool _isShootStart;
+    [SerializeField] private bool _isShootEnd;
     [SerializeField] private float _shootSpeed;
 
     public int ShootingMode 
@@ -17,12 +20,39 @@ public class ShootingPlayer : MonoBehaviour
         set => _shootingMode = value; 
     }
 
+    private void OnEnable()
+    {
+        _shootActionRef.action.Enable();
+        _shootActionRef.action.performed += OnShootPerformed;
+        _shootActionRef.action.canceled += OnShootCanceled;
+    }
+
+    private void OnDisable()
+    {
+        _shootActionRef.action.performed -= OnShootPerformed;
+        _shootActionRef.action.canceled -= OnShootCanceled;
+        _shootActionRef.action.Disable();
+    }
+
+    private void OnShootPerformed(InputAction.CallbackContext context)
+    {
+        _isShootStart = true;
+        Debug.Log("Стрелять!");
+        // Вы можете вызвать метод выстрела или запустить анимацию
+    }
+
+    private void OnShootCanceled(InputAction.CallbackContext context)
+    {
+        _isShootStart = false;
+        Debug.Log("Стоп стрельба!");
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !_isShoot)
+        if (_isShootStart && !_isShootEnd)
         {
             Shoot(_shootingMode);
-        }
+        }       
     }
 
     public void Shoot(int mode)
@@ -46,7 +76,7 @@ public class ShootingPlayer : MonoBehaviour
             _bullets.Remove(_bullets[0]);            
         }
 
-        _isShoot = true;
+        _isShootEnd = true;
         StartCoroutine(ShootDelay());
 
     }
@@ -76,7 +106,7 @@ public class ShootingPlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(_shootDelay);
 
-        _isShoot = false;
+        _isShootEnd = false;
     }
 
 

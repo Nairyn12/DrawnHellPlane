@@ -35,8 +35,7 @@ public class ScoreCount : MonoBehaviour
     }
 
     public void ChangeScore(int value)
-    {
-        Debug.Log("Обрабатываем в синглтоне " + _score + " " + value);
+    {        
         _score += value;
         _onChangeScore?.Invoke();
     }
