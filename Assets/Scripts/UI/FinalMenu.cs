@@ -28,6 +28,11 @@ public class FinalMenu : MonoBehaviour
         Time.timeScale = 1.0f;
     }
 
+    public void TimeScaleStop()
+    {
+        Time.timeScale = 0.0f;
+    }
+
     IEnumerator DelayBeforeFinalPanelActive(bool isDead)
     {
         yield return new WaitForSeconds(1.3f);
