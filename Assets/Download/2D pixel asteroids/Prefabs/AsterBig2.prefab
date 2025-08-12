@@ -11,17 +11,13 @@ GameObject:
   - component: {fileID: 1989084925316332678}
   - component: {fileID: 8855618701930753940}
   - component: {fileID: 8190648213632284613}
-  - component: {fileID: 9218985252188965548}
-  - component: {fileID: 7705545778998778771}
-  - component: {fileID: 1253880312697330090}
-  - component: {fileID: 5989743394598533394}
   m_Layer: 0
   m_Name: AsterBig2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1989084925316332678
 Transform:
   m_ObjectHideFlags: 0
@@ -98,7 +94,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 6542101368399430838}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: ad5333ddd3f327b4d89580f775fef10c, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -158,138 +154,3 @@ PolygonCollider2D:
       - {x: 0.41155577, y: -0.40659958}
       - {x: 0.6637516, y: -0.30761486}
   m_UseDelaunayMesh: 0
---- !u!50 &9218985252188965548
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6542101368399430838}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 4.5
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!114 &7705545778998778771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6542101368399430838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700eeb5e47ef1524199a69e194a81dfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 3
-  _return:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6542101368399430838}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1253880312697330090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6542101368399430838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60bfc68098322e04cb8e022d4fed9eee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _healthCurrent: 4
-  _healthMax: 4
-  scale: 4
-  _delayBlockDamage: 0
-  _isHealthChange: 0
-  _IsPlayerDestroy: 0
-  _countPlayerDamage: 0
-  _damageReaction:
-    m_PersistentCalls:
-      m_Calls: []
-  _OnChangeHealth:
-    m_PersistentCalls:
-      m_Calls: []
-  _OnChangeScore:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5989743394598533394}
-        m_TargetAssemblyTypeName: ScoreEnemy, Assembly-CSharp
-        m_MethodName: ChangePlayerScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8190648213632284613}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _death:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6542101368399430838}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &5989743394598533394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6542101368399430838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5956f3f70d070b42af44f36a0374d91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _score: 4

@@ -1,47 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.Windows;
 
 public class TargetMoveController : MonoBehaviour
 {
-    [SerializeField] private float _speedTarget;
-
-    [SerializeField] private InputActionReference _playerInput;
-
-    private Vector2 _input;
-
-    private void OnEnable()
-    {
-        _playerInput.action.Enable();
-        _playerInput.action.performed += OnMovePerformed;
-        _playerInput.action.canceled += OnMoveCanceled;
-    }
-
-    private void OnDisable()
-    {
-        _playerInput.action.performed -= OnMovePerformed;
-        _playerInput.action.canceled -= OnMoveCanceled;
-        _playerInput.action.Disable();
-    }
-
-    private void OnMovePerformed(InputAction.CallbackContext context)
-    {
-        _input = context.ReadValue<Vector2>();        
-    }
-
-    private void OnMoveCanceled(InputAction.CallbackContext context)
-    {
-        _input = Vector2.zero;
-    }
+    [SerializeField] private float speedTarget;
 
     void Update()
-    {        
-        
-        if (_input.x != 0.0f || _input.y != 0.0f)
+    {
+        if (Input.GetKey(KeyCode.W) && transform.position.y < 4.3f)
         {
-            transform.position += new Vector3(_input.x * _speedTarget * Time.deltaTime, _input.y * _speedTarget * Time.deltaTime);
-        }       
+            transform.position = new Vector2(transform.position.x, transform.position.y + speedTarget * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.S) && transform.position.y > -4.3f)
+        {
+            transform.position = new Vector2(transform.position.x, transform.position.y - speedTarget * Time.deltaTime);
+        }
+
+        if (Input.GetKey(KeyCode.A) && transform.position.x > -8.1f)
+        {
+            transform.position = new Vector2(transform.position.x - speedTarget * Time.deltaTime, transform.position.y);
+        }
+
+        if (Input.GetKey(KeyCode.D) && transform.position.x < 8.1f)
+        {
+            transform.position = new Vector2(transform.position.x + speedTarget * Time.deltaTime, transform.position.y);
+        }
     }
 }
