@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShootingPlayer : MonoBehaviour
 {
+    [SerializeField] private InputActionReference _shootActionRef;
     [SerializeField] private List<Transform> _guns;
     [SerializeField] private List<GameObject> _bullets;
     [SerializeField] private int _shootingMode;
     [SerializeField] private float _shootDelay;
-    [SerializeField] private bool _isShoot;
+    [SerializeField] private bool _isShootStart;
+    [SerializeField] private bool _isShootEnd;
     [SerializeField] private float _shootSpeed;
 
     public int ShootingMode 
@@ -17,12 +20,39 @@ public class ShootingPlayer : MonoBehaviour
         set => _shootingMode = value; 
     }
 
+    private void OnEnable()
+    {
+        _shootActionRef.action.Enable();
+        _shootActionRef.action.performed += OnShootPerformed;
+        _shootActionRef.action.canceled += OnShootCanceled;
+    }
+
+    private void OnDisable()
+    {
+        _shootActionRef.action.performed -= OnShootPerformed;
+        _shootActionRef.action.canceled -= OnShootCanceled;
+        _shootActionRef.action.Disable();
+    }
+
+    private void OnShootPerformed(InputAction.CallbackContext context)
+    {
+        _isShootStart = true;
+        Debug.Log("Стрелять!");
+        // Вы можете вызвать метод выстрела или запустить анимацию
+    }
+
+    private void OnShootCanceled(InputAction.CallbackContext context)
+    {
+        _isShootStart = false;
+        Debug.Log("Стоп стрельба!");
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !_isShoot)
+        if (_isShootStart && !_isShootEnd)
         {
             Shoot(_shootingMode);
-        }
+        }       
     }
 
     public void Shoot(int mode)
@@ -33,8 +63,7 @@ public class ShootingPlayer : MonoBehaviour
             {
                 _bullets[i].SetActive(true);
                 _bullets[i].transform.position = _guns[i].transform.position;
-                _bullets[i].GetComponent<Rigidbody2D>().AddForce(_bullets[i].transform.up * _shootSpeed, ForceMode2D.Impulse);
-                Debug.Log("СТРЕЛЯЕМ: " + _bullets[i].name);
+                _bullets[i].GetComponent<Rigidbody2D>().AddForce(_bullets[i].transform.up * _shootSpeed, ForceMode2D.Impulse);               
             }
             else
             {
@@ -43,13 +72,11 @@ public class ShootingPlayer : MonoBehaviour
         }
 
         for (int i = 0; i < mode; i++)
-        {
-            Debug.Log("УБРАНО: " + _bullets[0].name);
-            _bullets.Remove(_bullets[0]);
-            //Debug.Log("УБРАНОРЕЖИМ: " + mode);                   
+        {            
+            _bullets.Remove(_bullets[0]);            
         }
 
-        _isShoot = true;
+        _isShootEnd = true;
         StartCoroutine(ShootDelay());
 
     }
@@ -70,8 +97,7 @@ public class ShootingPlayer : MonoBehaviour
         {
             bullet.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             bullet.transform.position = transform.position;
-            _bullets.Add(bullet);
-            Debug.Log("Добавлено: " + bullet.name);
+            _bullets.Add(bullet);            
             bullet.SetActive(false);
         }
     }
@@ -80,7 +106,7 @@ public class ShootingPlayer : MonoBehaviour
     {
         yield return new WaitForSeconds(_shootDelay);
 
-        _isShoot = false;
+        _isShootEnd = false;
     }
 
 

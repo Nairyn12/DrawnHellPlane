@@ -33,10 +33,27 @@ public class GenerationAsteroids : MonoBehaviour
 
     public void ReturnOnList(GameObject ast)
     {
-        ast.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        ast.transform.position = transform.position;
-        _asteroids.Add(ast);
-        ast.SetActive(false);
+        bool overlap = false;
+
+        for (int i = 0; i < _asteroids.Count; i++)
+        {
+            if (_asteroids[i].name == ast.name)
+            {
+                overlap = true;
+            }
+        }
+
+        if (!overlap)
+        {
+            Debug.Log(ast.name + " возврат в пул");
+            ast.transform.position = transform.position;
+            Health health = ast.GetComponent<Health>(); 
+            health.Healing(health.HealthMax);
+            health.IsPlayerDestroy = false;
+            ast.GetComponent<Rigidbody2D>().velocity = Vector2.zero;           
+            _asteroids.Add(ast);
+            ast.SetActive(false);            
+        }
     }
 
     IEnumerator GeneratorStart()
@@ -51,7 +68,7 @@ public class GenerationAsteroids : MonoBehaviour
 
    IEnumerator GeneratorTemp()
     {
-        float r = Random.Range(0.5f, 2.0f);
+        float r = Random.Range(0.5f, 1.5f);
 
         yield return new WaitForSeconds(speedGeneration + r);
 
