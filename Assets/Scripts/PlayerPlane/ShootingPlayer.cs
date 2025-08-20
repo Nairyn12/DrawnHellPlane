@@ -37,14 +37,14 @@ public class ShootingPlayer : MonoBehaviour
     private void OnShootPerformed(InputAction.CallbackContext context)
     {
         _isShootStart = true;
-        Debug.Log("Стрелять!");
+        //Debug.Log("Стрелять!");
         // Вы можете вызвать метод выстрела или запустить анимацию
     }
 
     private void OnShootCanceled(InputAction.CallbackContext context)
     {
         _isShootStart = false;
-        Debug.Log("Стоп стрельба!");
+        //Debug.Log("Стоп стрельба!");
     }
 
     private void Update()

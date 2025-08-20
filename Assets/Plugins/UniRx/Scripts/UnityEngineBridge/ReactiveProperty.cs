@@ -245,6 +245,11 @@ namespace UniRx
         {
             return false;
         }
+
+        //public static implicit operator float(ReactiveProperty<float> v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 
     /// <summary>

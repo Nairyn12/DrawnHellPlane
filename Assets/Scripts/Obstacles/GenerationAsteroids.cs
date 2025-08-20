@@ -12,7 +12,23 @@ public class GenerationAsteroids : MonoBehaviour
 
     void Start()
     {
+        for (int i = 0; i < _asteroids.Count; i++)
+        {
+            _asteroids[i].SetActive(true);
+            _asteroids[i].GetComponent<DamageController>().OnObjectDestroyed += ReturnOnList;
+            _asteroids[i].SetActive(false);
+        }
         StartCoroutine(GeneratorStart());
+    }
+
+    private void OnDisable()
+    {
+        for (int i = 0; i < _asteroids.Count; i++)
+        {
+            _asteroids[i].SetActive(true);
+            _asteroids[i].GetComponent<DamageController>().OnObjectDestroyed -= ReturnOnList;
+            _asteroids[i].SetActive(false);
+        }
     }
 
     public void Generation()
@@ -47,8 +63,8 @@ public class GenerationAsteroids : MonoBehaviour
         {
             Debug.Log(ast.name + " возврат в пул");
             ast.transform.position = transform.position;
-            Health health = ast.GetComponent<Health>(); 
-            health.Healing(health.HealthMax);
+            HealthSystem health = ast.GetComponent<HealthSystem>(); 
+            health.IncreaseMaxHealth();
             health.IsPlayerDestroy = false;
             ast.GetComponent<Rigidbody2D>().velocity = Vector2.zero;           
             _asteroids.Add(ast);

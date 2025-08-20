@@ -6,6 +6,18 @@ using UnityEngine;
 public class Explose : MonoBehaviour
 {
     [SerializeField] private GameObject _explosion;
+    public static Explose Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     public void SetExplosion(int scale, Vector2 pos)
     {

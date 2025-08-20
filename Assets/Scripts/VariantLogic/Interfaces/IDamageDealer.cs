@@ -4,6 +4,6 @@ using UniRx;
 using UnityEngine;
 
 public interface IDamageDealer
-{
-    float DamageAmount { get; }
+{    
+    ReactiveProperty<float> DamageAmount { get;}
 }

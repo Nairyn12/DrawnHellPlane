@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx.Triggers;
+using System;
+using UnityEngine.Events;
 
 public class DamageController : MonoBehaviour, IDamageable
 {
-    [SerializeField] private HealthSystem _health;
+    [SerializeField] private int _scale;
+
+    private HealthSystem _health;
+
+    public event Action<GameObject> OnObjectDestroyed;
 
     private void Start()
     {
@@ -17,7 +23,16 @@ public class DamageController : MonoBehaviour, IDamageable
         if (col.gameObject.GetComponent<IDamageDealer>() != null)
         {
             IDamageDealer damage = col.gameObject.GetComponent<IDamageDealer>();
-            TakeDamage(damage.DamageAmount);
+            TakeDamage(damage.DamageAmount.Value);
+            if (col.gameObject.CompareTag("BulletPlayer"))
+            {
+                _health.IsPlayerDestroy = true;
+                col.gameObject.GetComponent<SimpleDamage>()._return?.Invoke();
+            }
+            else
+            {
+                _health.IsPlayerDestroy = false;
+            }
         }
     }
 
@@ -25,9 +40,14 @@ public class DamageController : MonoBehaviour, IDamageable
     {
         _health.TakeDamage(damage);
 
-        if (_health.CurrentHealth <= 0)
+        if (_health.HealthChanged.Value <= 0.0f)
         {
-            
+            if (_health.IsPlayerDestroy)
+            {
+                PlayerScore.TakeScore(_health.ScoreForPlayer.Value);
+            }
+            Explose.Instance.SetExplosion(_scale, transform.position);
+            OnObjectDestroyed.Invoke(this.gameObject);
         }
     }
 }
