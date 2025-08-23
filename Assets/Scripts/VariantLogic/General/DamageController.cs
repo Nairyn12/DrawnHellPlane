@@ -8,10 +8,15 @@ using UnityEngine.Events;
 public class DamageController : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _scale;
-
+    [SerializeField] ScorePlayer _score;
     private HealthSystem _health;
+    private bool _isDamage;
+
+    public bool IsDamage { get => _isDamage; set => _isDamage = value; }
 
     public event Action<GameObject> OnObjectDestroyed;
+    public UnityEvent _playerDamage;
+    public UnityEvent _playerDeath;
 
     private void Start()
     {
@@ -38,16 +43,29 @@ public class DamageController : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
-        _health.TakeDamage(damage);
+        if (!_isDamage)
+        {
+            _health.TakeDamage(damage);
+            _playerDamage?.Invoke();
+        }     
 
         if (_health.HealthChanged.Value <= 0.0f)
         {
             if (_health.IsPlayerDestroy)
             {
-                PlayerScore.TakeScore(_health.ScoreForPlayer.Value);
+                _score.TakeScore(_health.ScoreForPlayer.Value);
             }
+            
             Explose.Instance.SetExplosion(_scale, transform.position);
-            OnObjectDestroyed.Invoke(this.gameObject);
+            
+            if (!gameObject.CompareTag("Player"))
+            {
+                OnObjectDestroyed.Invoke(this.gameObject);
+            }
+            else
+            {
+                _playerDeath?.Invoke();
+            }
         }
     }
 }

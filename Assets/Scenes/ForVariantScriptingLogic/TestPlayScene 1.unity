@@ -279,6 +279,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1bdf033fa15cbc46bfd296931e128ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
   _scoreText: {fileID: 472011814}
 --- !u!1 &43191894 stripped
 GameObject:
@@ -382,6 +383,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &88710940 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8235638183879764680, guid: 09ae3015343949645bdf7082acb7dd15, type: 3}
+  m_PrefabInstance: {fileID: 8617258064308062450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &135221466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2682178443970357546, guid: 09ae3015343949645bdf7082acb7dd15, type: 3}
@@ -930,21 +936,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 3
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549048}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 199600592}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &202474536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1119,21 +1117,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 1
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549045}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 202474538}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &227458704 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1009617036723442365, guid: 09ae3015343949645bdf7082acb7dd15, type: 3}
@@ -2110,21 +2100,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 4
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549047}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 373909753}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &382474869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2299,21 +2281,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 2
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549046}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 382474871}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &386014391
 GameObject:
   m_ObjectHideFlags: 0
@@ -3102,21 +3076,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 4
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549047}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 579413249}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &607823288
 GameObject:
   m_ObjectHideFlags: 0
@@ -5416,21 +5382,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 1
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549045}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1136373177}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1193414120
 GameObject:
   m_ObjectHideFlags: 0
@@ -5877,8 +5835,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f7f91b9040f2754bb24c134b84d1d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score:
-    value: 0
 --- !u!1 &1237362368
 GameObject:
   m_ObjectHideFlags: 0
@@ -7341,21 +7297,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 2
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549046}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1470375521}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1575363878
 GameObject:
   m_ObjectHideFlags: 0
@@ -7401,6 +7349,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _explosion: {fileID: 3871007348655810843, guid: ce163b285c66743488fe188cedd3cf02, type: 3}
+--- !u!95 &1576422621 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4243344960132960700, guid: 09ae3015343949645bdf7082acb7dd15, type: 3}
+  m_PrefabInstance: {fileID: 8617258064308062450}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1621149689
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7664,21 +7617,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 3
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549048}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1621149691}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1674703574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7853,21 +7798,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 2
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549046}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1674703576}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1679271498
 GameObject:
   m_ObjectHideFlags: 0
@@ -8841,21 +8778,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 1
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549045}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1850248179}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &1855482065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9030,21 +8959,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 1
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549045}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1855482067}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1856879972
 GameObject:
   m_ObjectHideFlags: 0
@@ -9511,21 +9432,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 1
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549045}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1861771990}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1901893758
 GameObject:
   m_ObjectHideFlags: 0
@@ -10016,9 +9929,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 2
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1950649805}
+        m_TargetAssemblyTypeName: DamageAnimation, Assembly-CSharp
+        m_MethodName: Damage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 88710940}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1950649803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10037,6 +9978,20 @@ MonoBehaviour:
     value: 10
   scoreForPlayer:
     value: 0
+--- !u!114 &1950649805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950649798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b571b5b58f70da34d94352c7cde71849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _anim: {fileID: 1576422621}
+  _damage: {fileID: 1950649802}
 --- !u!1 &1950664236
 GameObject:
   m_ObjectHideFlags: 0
@@ -10479,21 +10434,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 2
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549046}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2061959359}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2073307512
 GameObject:
   m_ObjectHideFlags: 0
@@ -10836,21 +10783,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 2
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549046}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 2098801936}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!60 &589792030072213794
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -11448,21 +11387,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 4
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549047}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3525697573735616983}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3955418799440236765 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8316155168902672928, guid: 119ec9c9678166b41bf4415b9eb8af28, type: 3}
@@ -12194,21 +12125,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 3
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549048}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 3955418799440236765}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &4703767104296304082
 Transform:
   m_ObjectHideFlags: 0
@@ -12636,21 +12559,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 3
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549048}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 6542101368077386795}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &6619055104574471856
 Transform:
   m_ObjectHideFlags: 0
@@ -12796,7 +12711,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 0
-  OnDeath:
+  _score: {fileID: 0}
+  _playerDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _playerDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7787009217353402620
@@ -12899,7 +12818,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 0
-  OnDeath:
+  _score: {fileID: 0}
+  _playerDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _playerDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7787009217610800782
@@ -13002,7 +12925,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 0
-  OnDeath:
+  _score: {fileID: 0}
+  _playerDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _playerDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7787009217840753734
@@ -13105,7 +13032,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 0
-  OnDeath:
+  _score: {fileID: 0}
+  _playerDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _playerDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7787009218294555364
@@ -13208,7 +13139,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 0
-  OnDeath:
+  _score: {fileID: 0}
+  _playerDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _playerDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &7787009218562827403
@@ -13480,7 +13415,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 0
-  OnDeath:
+  _score: {fileID: 0}
+  _playerDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _playerDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &8316155168311748040
@@ -13583,7 +13522,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 0
-  OnDeath:
+  _score: {fileID: 0}
+  _playerDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _playerDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &8503050003675148957
@@ -13661,7 +13604,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 0
-  OnDeath:
+  _score: {fileID: 0}
+  _playerDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _playerDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &8510834992060579740
@@ -13795,6 +13742,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2089018000394896145, guid: 09ae3015343949645bdf7082acb7dd15, type: 3}
       insertIndex: 6
       addedObject: {fileID: 1950649802}
+    - targetCorrespondingSourceObject: {fileID: 2089018000394896145, guid: 09ae3015343949645bdf7082acb7dd15, type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 1950649805}
     - targetCorrespondingSourceObject: {fileID: 3298413262954648025, guid: 09ae3015343949645bdf7082acb7dd15, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1828521979}
@@ -13936,21 +13886,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scale: 1
-  OnDeath:
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1732549045}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8266873879142885200}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
