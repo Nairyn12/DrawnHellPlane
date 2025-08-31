@@ -61,7 +61,6 @@ public class GenerationAsteroids : MonoBehaviour
 
         if (!overlap)
         {
-            Debug.Log(ast.name + " возврат в пул");
             ast.transform.position = transform.position;
             HealthSystem health = ast.GetComponent<HealthSystem>(); 
             health.IncreaseMaxHealth();

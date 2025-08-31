@@ -15,7 +15,6 @@ public class ScorePlayer : ScriptableObject
 
     public void TakeScore(float score)
     {
-        Debug.Log("Score: " + score);
         _score.Value += score;
     }
 }

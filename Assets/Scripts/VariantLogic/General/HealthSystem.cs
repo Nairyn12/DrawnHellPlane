@@ -24,8 +24,7 @@ public class HealthSystem : MonoBehaviour, IHealth
     }
 
     public void TakeDamage(float damage)
-    {
-        Debug.Log("Урон: " + damage);
+    {       
         currentHealth.Value = Mathf.Clamp(currentHealth.Value - damage, 0, maxHealth.Value);
     }
 

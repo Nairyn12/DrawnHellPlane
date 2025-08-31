@@ -22,8 +22,7 @@ public class Explose : MonoBehaviour
     public void SetExplosion(int scale, Vector2 pos)
     {
         GameObject explosion = Instantiate(_explosion, pos, Quaternion.identity);
-        explosion.transform.localScale *= scale;
-        Debug.Log(explosion.gameObject.name + " " + explosion.gameObject.transform.position);
+        explosion.transform.localScale *= scale;        
         StartCoroutine(ExploseDuration(explosion));
     }
 

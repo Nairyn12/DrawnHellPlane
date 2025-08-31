@@ -9,6 +9,7 @@ public class DamageController : MonoBehaviour, IDamageable
 {
     [SerializeField] private int _scale;
     [SerializeField] ScorePlayer _score;
+    [SerializeField] DropFromEnemy _drop;
     private HealthSystem _health;
     private bool _isDamage;
 
@@ -20,7 +21,7 @@ public class DamageController : MonoBehaviour, IDamageable
 
     private void Start()
     {
-        _health = GetComponent<HealthSystem>();
+        _health = GetComponent<HealthSystem>();        
     }
 
     private void OnCollisionEnter2D(Collision2D col)
@@ -60,12 +61,14 @@ public class DamageController : MonoBehaviour, IDamageable
             
             if (!gameObject.CompareTag("Player"))
             {
-                OnObjectDestroyed.Invoke(this.gameObject);
+                Debug.Log("------- " + this.gameObject.name + " " + this.gameObject.transform.position);
+                _drop.DropHealthItem(this.gameObject.transform.position);
+                OnObjectDestroyed.Invoke(this.gameObject);                
             }
             else
             {
                 _playerDeath?.Invoke();
             }
         }
-    }
+    }   
 }

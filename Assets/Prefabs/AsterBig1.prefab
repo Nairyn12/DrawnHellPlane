@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 1499036572157422035}
   - component: {fileID: 8120538420126047250}
   - component: {fileID: 5126157692077049430}
-  - component: {fileID: 7441517121656155737}
-  - component: {fileID: 2046632154111843409}
-  - component: {fileID: 2757702268650087498}
+  - component: {fileID: 4267628118004059908}
+  - component: {fileID: 5498151368411520340}
+  - component: {fileID: 8500980749841800359}
   m_Layer: 0
   m_Name: AsterBig1
   m_TagString: Untagged
@@ -186,9 +186,9 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &7441517121656155737
+--- !u!114 &4267628118004059908
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -197,10 +197,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8316155168902672928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 700eeb5e47ef1524199a69e194a81dfc, type: 3}
+  m_Script: {fileID: 11500000, guid: 59e42eb1a46fe3c4a85b0e14eb2d7e1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 3
+  _damage:
+    value: 3
   _return:
     m_PersistentCalls:
       m_Calls:
@@ -216,7 +217,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2046632154111843409
+--- !u!114 &5498151368411520340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,65 +226,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8316155168902672928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60bfc68098322e04cb8e022d4fed9eee, type: 3}
+  m_Script: {fileID: 11500000, guid: f5f30511274c0b34bbbbbab5d0b2cd97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthCurrent: 4
-  _healthMax: 4
-  scale: 4
-  _delayBlockDamage: 0
-  _isHealthChange: 0
-  _IsPlayerDestroy: 0
-  _countPlayerDamage: 0
-  _damageReaction:
-    m_PersistentCalls:
-      m_Calls: []
-  _OnChangeHealth:
-    m_PersistentCalls:
-      m_Calls: []
-  _OnChangeScore:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2757702268650087498}
-        m_TargetAssemblyTypeName: ScoreEnemy, Assembly-CSharp
-        m_MethodName: ChangePlayerScore
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8120538420126047250}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _death:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GenerationAsteroids, Assembly-CSharp
-        m_MethodName: ReturnOnList
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 8316155168902672928}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &2757702268650087498
+  currentHealth:
+    value: 5
+  maxHealth:
+    value: 5
+  scoreForPlayer:
+    value: 4
+--- !u!114 &8500980749841800359
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -292,7 +244,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 8316155168902672928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5956f3f70d070b42af44f36a0374d91, type: 3}
+  m_Script: {fileID: 11500000, guid: 440cc29f63e53bf4cad169ab0cf8be5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 4
+  _scale: 3
+  _score: {fileID: 11400000, guid: 3f072bdbc56cdcb49a7076d2d716ca1e, type: 2}
+  _playerDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  _playerDeath:
+    m_PersistentCalls:
+      m_Calls: []
