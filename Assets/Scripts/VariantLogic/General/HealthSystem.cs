@@ -15,7 +15,7 @@ public class HealthSystem : MonoBehaviour, IHealth
     public bool IsPlayerDestroy { get => _isPlayerDestroy; set => _isPlayerDestroy = value; }
     internal SerializableFloatReactiveProperty ScoreForPlayer { get => scoreForPlayer; set => scoreForPlayer = value; }
 
-    private bool _isPlayerDestroy;
+    [SerializeField] private bool _isPlayerDestroy;
 
     public void Initialize(float initialHealth, float initialMaxHealth)
     {

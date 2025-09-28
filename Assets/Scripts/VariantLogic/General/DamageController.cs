@@ -27,9 +27,7 @@ public class DamageController : MonoBehaviour, IDamageable
     private void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.GetComponent<IDamageDealer>() != null)
-        {
-            IDamageDealer damage = col.gameObject.GetComponent<IDamageDealer>();
-            TakeDamage(damage.DamageAmount.Value);
+        {            
             if (col.gameObject.CompareTag("BulletPlayer"))
             {
                 _health.IsPlayerDestroy = true;
@@ -39,6 +37,8 @@ public class DamageController : MonoBehaviour, IDamageable
             {
                 _health.IsPlayerDestroy = false;
             }
+            IDamageDealer damage = col.gameObject.GetComponent<IDamageDealer>();
+            TakeDamage(damage.DamageAmount.Value);
         }
     }
 
@@ -55,6 +55,7 @@ public class DamageController : MonoBehaviour, IDamageable
             if (_health.IsPlayerDestroy)
             {
                 _score.TakeScore(_health.ScoreForPlayer.Value);
+                _health.IsPlayerDestroy = false;
             }
             
             Explose.Instance.SetExplosion(_scale, transform.position);
