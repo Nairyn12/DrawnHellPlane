@@ -7,5 +7,5 @@ public interface IProtectiveField
 {
     ReactiveProperty<float> FieldHealth { get; set; }
 
-    void FieldOn(float time);
+    void FieldOn();
 }

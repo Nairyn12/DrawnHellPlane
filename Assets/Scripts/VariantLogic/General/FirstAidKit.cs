@@ -9,7 +9,7 @@ public class FirstAidKit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.GetComponent<HealthSystem>())
+        if (col.gameObject.GetComponent<HealthSystem>() && !col.gameObject.CompareTag("ProtectiveField"))
         {
             col.gameObject.GetComponent<HealthSystem>().Heal(_healthAmount.Value);
             gameObject.SetActive(false);

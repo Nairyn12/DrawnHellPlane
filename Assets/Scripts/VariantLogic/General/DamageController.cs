@@ -57,10 +57,13 @@ public class DamageController : MonoBehaviour, IDamageable
                 _score.TakeScore(_health.ScoreForPlayer.Value);
                 _health.IsPlayerDestroy = false;
             }
+
+            if (!gameObject.CompareTag("ProtectiveField"))
+            {
+                Explose.Instance.SetExplosion(_scale, transform.position);
+            }
             
-            Explose.Instance.SetExplosion(_scale, transform.position);
-            
-            if (!gameObject.CompareTag("Player"))
+            if (!gameObject.CompareTag("Player") && !gameObject.CompareTag("ProtectiveField"))
             {
                 Debug.Log("------- " + this.gameObject.name + " " + this.gameObject.transform.position);
                 _drop.DropHealthItem(this.gameObject.transform.position);

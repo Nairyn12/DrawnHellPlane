@@ -3,15 +3,7 @@ using System.Collections.Generic;
 using UniRx;
 using UnityEngine;
 
-public class FieldSystem : MonoBehaviour, IProtectiveField
+public class FieldSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject _field;
-
-    public ReactiveProperty<float> FieldDuration { get; set; }
-
-    public void FieldOn(float time)
-    {
-
-
-    }
+  
 }
